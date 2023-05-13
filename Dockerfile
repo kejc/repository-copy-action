@@ -9,7 +9,7 @@ RUN ssh-keygen -F github.com
 RUN mkdir -p /app /root/.ssh
 RUN mkdir -p /app /root/.ssh
 RUN touch /root/.ssh/id_rsa
-RUN chmod 600 /root/.ssh/known_hosts
+RUN chmod 600 /root/.ssh/id_rsa
 
 RUN chmod +x /entrypoint.sh
 VOLUME /app
