@@ -16,7 +16,16 @@ echo "****** COPY FILES ******" >&2
 if [ -f "/source/.gitignore" ]; then
   cp /source/.gitignore /dest/
 fi
-cp -r /source/* /dest/
+
+if [ "$5" == "*" ]; then
+  cp -r /source/* /dest/
+else
+  for i in $(echo "$5" | sed "s/,/ /g")
+  do
+    echo "$i"
+    cp -r "/source/$i" /dest/
+  done
+fi
 
 echo "****** COMMIT & PUSH ******" >&2
 cd /dest

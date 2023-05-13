@@ -11,6 +11,8 @@ inputs:
     required: true
   destination_private_ssh_key:
     description: 'The private SSH key for destination repository'
+  files:
+    description: 'Define, which files should be copied, default is all files'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -19,3 +21,4 @@ runs:
     - ${{ inputs.destination_repo }}
     - ${{ inputs.source_private_ssh_key }}
     - ${{ inputs.destination_private_ssh_key }}
+    - ${{ inputs.files }}
