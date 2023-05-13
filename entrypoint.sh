@@ -9,16 +9,16 @@ echo "****** DESTINATION REPO HANDLE ******" >&2
 echo "$4" > /root/.ssh/id_rsa
 git clone $2 /dest --depth=1
 
-#echo "****** COPY FILES ******" >&2
-#if [ -f "/source/.gitignore" ]; then
-#  cp /source/.gitignore /dest/
-#fi
-#cp -R /source/* /dest/*
-#
-#echo "****** COMMIT & PUSH ******" >&2
-#git add .
-#git commit -am "action[repository-copy-action] $1 -> $2"
-#git push
+echo "****** COPY FILES ******" >&2
+if [ -f "/source/.gitignore" ]; then
+  cp /source/.gitignore /dest/
+fi
+cp -r !(README.md) /source/* /dest/*
+
+echo "****** COMMIT & PUSH ******" >&2
+git add .
+git commit -am "action[repository-copy-action] $1 -> $2"
+git push
 
 echo "****** FILES ******" >&2
 echo ">> source" >&2
