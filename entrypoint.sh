@@ -5,7 +5,7 @@ touch ~/.ssh/known_hosts
 
 echo "****** SSH SETUP ******" >&2
 eval "$(ssh-agent -s)"
-#ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 ssh-keygen -R github.com
 echo "$3" > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
