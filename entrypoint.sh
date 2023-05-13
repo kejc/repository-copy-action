@@ -1,9 +1,12 @@
 #!/bin/sh -l
 
+mkdir /app ~/.ssh
+
 echo "$1" >&2
 echo "$2" >&2
 
 echo $1 > ~/.ssh/id_rsa
 
-#mkdir /app
+cat ~/.ssh/id_rsa
+
 #git clone $1 /app --depth=1
