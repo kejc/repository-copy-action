@@ -6,7 +6,7 @@ COPY known_hosts /root/.ssh/known_hosts
 RUN apk --update add git openssh-client
 RUN eval "$(ssh-agent -s)"
 RUN ssh-keygen -F github.com
-RUN mkdir -p /source /dest /root/.ssh
+RUN mkdir -p /app /dest /root/.ssh
 RUN touch /root/.ssh/id_rsa
 RUN chmod 600 /root/.ssh/id_rsa
 
