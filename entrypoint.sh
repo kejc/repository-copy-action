@@ -1,6 +1,7 @@
 #!/bin/sh -l
 
 mkdir -p /app ~/.ssh
+touch ~/.ssh/known_hosts
 
 echo "****** SSH SETUP ******" >&2
 eval "$(ssh-agent -s)"
