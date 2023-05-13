@@ -1,7 +1,7 @@
 name: 'Repository Copy Action'
 description: 'Basic action to copy files to another repository'
 inputs:
-  destinationRepo:
+  destination_repo:
     description: 'The repository, we wish to copy our files to'
     required: true
 runs:
