@@ -1,14 +1,13 @@
 #!/bin/sh -l
 
-echo "****** SET PERMISSIONS ******" >&2
+echo "****** SOURCE REPO HANDLE ******" >&2
 echo "$3" > /root/.ssh/id_rsa
-
-echo "****** SSH SETUP ******" >&2
 ssh-add /root/.ssh/id_rsa
+git clone $1 /source --depth=1
 
-echo "****** GIT SOURCE DATA ******" >&2
-git clone $1 /app --depth=1
-
-ls -lah /app
+echo "****** DESTINATION REPO HANDLE ******" >&2
+echo "$4" > /root/.ssh/id_rsa
+git clone $2 /dest --depth=1
+cp -R /source/* /dest/*
 
 # FIXME: Change the ssh key for project after done
