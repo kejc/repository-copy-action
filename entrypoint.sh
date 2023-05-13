@@ -1,5 +1,8 @@
 #!/bin/sh -l
 
+git config --global user.email "actions[repository-copy-action]@mail.com"
+git config --global user.name "actions[repository-copy-action]"
+
 echo "****** SOURCE REPO HANDLE ******" >&2
 echo "$3" > /root/.ssh/id_rsa
 ssh-add /root/.ssh/id_rsa
