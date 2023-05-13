@@ -3,6 +3,7 @@
 mkdir -p /app ~/.ssh
 
 echo $3 > ~/.ssh/id_rsa
+chmod 0600 ~/.ssh/id_rsa
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 
