@@ -11,6 +11,7 @@ chmod 600 ~/.ssh/id_rsa
 
 echo "Host *
     StrictHostKeyChecking no" > ~/.ssh/config
+sudo chmod 400 ~/.ssh/config
 
 echo "****** SSH SETUP ******" >&2
 eval "$(ssh-agent -s)"
