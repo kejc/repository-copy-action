@@ -25,6 +25,8 @@ echo ">> source" >&2
 ls /source
 echo ">> dest" >&2
 ls /dest
+cat /source/README.md
+cat /dest/README.md
 
 # FIXME: Change the ssh key for project after done
 
