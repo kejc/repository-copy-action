@@ -13,7 +13,7 @@ echo "****** COPY FILES ******" >&2
 if [ -f "/source/.gitignore" ]; then
   cp /source/.gitignore /dest/
 fi
-cp -r !(README.md) /source/* /dest/*
+cp -r /source/* /dest/*
 
 echo "****** COMMIT & PUSH ******" >&2
 git add .
