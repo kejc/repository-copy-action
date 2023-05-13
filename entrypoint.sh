@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-mkdir /app ~/.ssh
+mkdir -p /app ~/.ssh
 
 echo "$1" >&2
 echo "$2" >&2
