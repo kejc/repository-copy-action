@@ -1,6 +1,4 @@
 #!/bin/sh -l
 
-echo "Hello $1" >&2
-
-pwd
-ls -lah /app
+echo "$1" >&2
+echo "$2" >&2

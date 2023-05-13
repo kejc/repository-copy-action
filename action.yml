@@ -1,6 +1,9 @@
 name: 'Repository Copy Action'
 description: 'Basic action to copy files to another repository'
 inputs:
+  source_repo:
+    description: 'The reposity, we wish to copy our files from'
+    required: true
   destination_repo:
     description: 'The repository, we wish to copy our files to'
     required: true
@@ -8,4 +11,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.source_repo }}
     - ${{ inputs.destination_repo }}
