@@ -12,7 +12,7 @@ chmod 600 ~/.ssh/id_rsa
 echo "****** SSH SETUP ******" >&2
 eval "$(ssh-agent -s)"
 
-ssh-keyscan -t rsa github.com >> /root/.ssh/known_hosts
+ssh-keygen -F github.com
 
 ssh-add ~/.ssh/id_rsa
 
