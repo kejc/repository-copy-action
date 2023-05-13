@@ -3,4 +3,5 @@ RUN apk update && \
     apk add git
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+VOLUME /app
 ENTRYPOINT [ "/entrypoint.sh" ]
