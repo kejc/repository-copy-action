@@ -22,7 +22,7 @@ if [ "$5" == "*" ]; then
 else
   for i in $(echo "$5" | sed "s/,/ /g")
   do
-    echo "$i"
+    rm -rf "/dest/$i"
     cp -r "/source/$i" /dest/
   done
 fi
@@ -34,13 +34,7 @@ git commit -am "action[repository-copy-action] $1 -> $2"
 git push
 cd /
 
-echo "****** FILES ******" >&2
-echo ">> source" >&2
-ls /source
-echo ">> dest" >&2
-ls /dest
-cat /source/README.md
-cat /dest/README.md
+echo "****** DONE ******" >&2
 
 # FIXME: Change the ssh key for project after done
 
