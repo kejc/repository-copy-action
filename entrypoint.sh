@@ -2,4 +2,4 @@
 
 echo "Hello $1" >&2
 
-ls -lah
+ls -lah /github/workspace
