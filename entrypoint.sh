@@ -9,14 +9,12 @@ echo "****** SET PERMISSIONS ******" >&2
 echo "$3" > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 
-echo "Host *
-    StrictHostKeyChecking no" > ~/.ssh/config
-sudo chmod 400 ~/.ssh/config
-
 echo "****** SSH SETUP ******" >&2
 eval "$(ssh-agent -s)"
+
+echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-ssh-keygen -R github.com
+
 ssh-add ~/.ssh/id_rsa
 
 echo "****** GIT SOURCE DATA ******" >&2
