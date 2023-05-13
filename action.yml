@@ -4,12 +4,18 @@ inputs:
   source_repo:
     description: 'The reposity, we wish to copy our files from'
     required: true
+  source_private_ssh_key:
+    description: 'The private SSH key for source repository'
   destination_repo:
     description: 'The repository, we wish to copy our files to'
     required: true
+  destination_private_ssh_key:
+    description: 'The private SSH key for destination repository'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.source_repo }}
     - ${{ inputs.destination_repo }}
+    - ${{ inputs.source_private_ssh_key }}
+    - ${{ inputs.destination_private_ssh_key }}
