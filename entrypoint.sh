@@ -22,6 +22,7 @@ if [ "$5" == "*" ]; then
 else
   for i in $(echo "$5" | sed "s/,/ /g")
   do
+    echo "copying file: $i"
     rm -rf "/dest/$i"
     cp -r "/source/$i" /dest/
   done
