@@ -16,9 +16,11 @@ fi
 cp -r /source/* /dest/*
 
 echo "****** COMMIT & PUSH ******" >&2
+cd /dest
 git add .
 git commit -am "action[repository-copy-action] $1 -> $2"
 git push
+cd /
 
 echo "****** FILES ******" >&2
 echo ">> source" >&2
